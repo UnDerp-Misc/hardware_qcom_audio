@@ -3105,9 +3105,6 @@ void *platform_init(struct audio_device *adev)
         my_data->fluence_sb_enabled = true;
 
     my_data->fluence_type = FLUENCE_NONE;
-    if (property_get("ro.vendor.audio.sdk.fluencetype",
-                      my_data->fluence_cap, NULL) > 0) {
-        if (!strncmp("fluencepro", my_data->fluence_cap, sizeof("fluencepro"))) {
     if ((property_get("ro.vendor.audio.sdk.fluencetype",
                       my_data->fluence_cap, NULL) > 0) ||
         (property_get("ro.qc.sdk.audio.fluencetype",
